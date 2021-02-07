@@ -6,23 +6,23 @@ _Javascript code to export from an IndexedDB and import into another IndexedDB i
 
 In order to export all the saved sessions from the malicious extension and import them in a safe previous release ([7.1.6](https://github.com/greatsuspender/thegreatsuspender/releases/tag/v7.1.6)) of the extension, I followed these steps:
 
-- close Chrome - disable Internet connection - open Chrome - reenable the malicious extension
-- go to the extension options page
-- open the Chrome DevTools window (CTR+SHIT+I)
-- in the DevTools console
-- - execute the Javascript code in [consoleSave.js](consoleSave.js)
-- - execute the Javascript code in [exportSavedSessions.js](exportSavedSessions.js) -> save the file console.json
-- close the Chrome DevTools window - close the malicious extension options page and disable it
-- install the previous release ([7.1.6](https://github.com/greatsuspender/thegreatsuspender/releases/tag/v7.1.6)) of the extension
-- copy the file console.json to the installation folder
-- use a text editor to replace all the occurence of the string "klbibkeccnjlkjkiokjodocebajanakg" (the id of the malicious extension) with the string of the id of the installed estension
-- go to this extension options page
-- open the Chrome DevTools window
-- in the DevTools console
-- - execute the Javascript code in [loadJSONFunctions.js](loadJSONFunctions.js)
-- - execute the command `loadJSON('console.json')`
-- check that all the saved session have been imported in this extension
-- remove the malicious extension
+1. close Chrome - disable Internet connection - open Chrome - reenable the malicious extension
+2. go to the extension options page
+3. open the Chrome DevTools window (CTR+SHIT+I)
+4. in the DevTools console
+   * execute the Javascript code in [consoleSave.js](consoleSave.js)
+   * execute the Javascript code in [exportSavedSessions.js](exportSavedSessions.js) -> save the file console.json
+5. close the Chrome DevTools window - close the malicious extension options page and disable it
+6. install the previous release ([7.1.6](https://github.com/greatsuspender/thegreatsuspender/releases/tag/v7.1.6)) of the extension
+7. copy the file console.json to the installation folder
+8. use a text editor to replace all the occurence of the string "klbibkeccnjlkjkiokjodocebajanakg" (the id of the malicious extension) with the string of the id of the installed estension
+9. go to this extension options page
+10. open the Chrome DevTools window
+11. in the DevTools console
+    * execute the Javascript code in [loadJSONFunctions.js](loadJSONFunctions.js)
+    * execute the command `loadJSON('console.json')`
+12. check that all the saved session have been imported in this extension
+13. remove the malicious extension
 
 
 The code was taken and modified to the needs from:
